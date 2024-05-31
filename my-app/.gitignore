@@ -5,8 +5,8 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
-/..//cssPractise
-hope.txt
+..//cssPractise
+../hope.txt
 
 # testing
 /coverage
