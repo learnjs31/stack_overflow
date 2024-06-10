@@ -19,21 +19,15 @@ const AskQuestion = () => {
   //   );
 
   //code copied from clerk website
-  //   const { isLoaded, userId, sessionId, getToken } = useAuth();
-  const { isLoaded, isSignedIn, user } = useUser();
-  console.log(user);
+  const { isLoaded, userId, sessionId, getToken } = useAuth();
+  //   const { IsLOaded, isSignedIn, user } = useUser();
 
   // In case the user signs out while on the page.
-  if (!isLoaded || !isSignedIn) {
+  if (!isLoaded || !userId) {
     return <p>Not Logged in</p>;
   }
 
-  return (
-    <div>
-      Hello, {user.fullName} your current active session is
-      {/* {sessionId} */}
-    </div>
-  );
+  return <div>Hello, your current active session is -{sessionId}</div>;
 };
 
 export default AskQuestion;
