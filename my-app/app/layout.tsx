@@ -60,9 +60,9 @@ export default function RootLayout({
           </SignedOut> */}
           <ThemeProvider>
             <div className="flex justify-end">
-              <SignedIn>
+              {/* <SignedIn>
                 <UserButton />
-              </SignedIn>
+              </SignedIn> */}
             </div>
             {children}
           </ThemeProvider>
