@@ -1,33 +1,25 @@
-"use client";
+import Question from "@/components/forms/Question";
+import { getUserById } from "@/lib/actions/user.action";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 import React from "react";
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-  useAuth,
-  useUser,
-} from "@clerk/nextjs";
-import { log } from "console";
 
-const AskQuestion = () => {
-  //   return (
-  //     <SignedIn>
-  //       <div>Ask a Question----</div>
-  //     </SignedIn>
-  //   );
+const AskQuestion = async () => {
+  const { userId } = auth();
+  // const userId = "clerk_12345";
 
-  //code copied from clerk website
-  const { isLoaded, userId, sessionId, getToken } = useAuth();
-  //   const { IsLOaded, isSignedIn, user } = useUser();
+  if (!userId) redirect("/sign-in");
+  const mongoUser = await getUserById({ userId });
+  console.log(mongoUser);
 
-  // In case the user signs out while on the page.
-  if (!isLoaded || !userId) {
-    return <p>Not Logged in</p>;
-  }
-
-  return <div>Hello, your current active session is -{sessionId}</div>;
+  return (
+    <div>
+      <h1 className="h1-bold text-dark100_light900">Ask a Question</h1>
+      <div className="mt-9">
+        <Question mongoUserId={JSON.stringify(mongoUser._id)} />
+      </div>
+    </div>
+  );
 };
 
 export default AskQuestion;
