@@ -92,11 +92,7 @@ export async function POST(req: Request) {
     const deletedUser = await deleteUser({
         clerkId: id!
     })
-<<<<<<< HEAD
     return NextResponse.json({message:'OK', user:deletedUser})
-=======
-    return NextResponse.json({message:'OK', user:mongoUser})
->>>>>>> webhook_user_creation
   }
   return new Response('', { status: 200 })
 }
