@@ -1,0 +1,12 @@
+MobileNav - SheetTrigger - asChild not written
+MobileNav - SheetTrigger - Image - className - sms is -> sm
+MobileNav - SheetClose - asChild not written
+home page - div - button(ask a question)-no className given
+Component - NoResult - button have same classes on light and dark
+dribble and aaplabs for design ideas and syntax
+
+
+Mongo DB Atlas username - shrivastavaabhishek3112
+Mongo DB Atlas password - 6LkF2yuEqXKVIHF0
+
+

@@ -1,0 +1,10 @@
+// - video 07 authentication
+import { SignIn } from "@clerk/nextjs";
+
+export default function Page() {
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <SignIn />
+    </div>
+  );
+}
