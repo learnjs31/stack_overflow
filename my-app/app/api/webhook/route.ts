@@ -92,7 +92,7 @@ export async function POST(req: Request) {
     const deletedUser = await deleteUser({
         clerkId: id!
     })
-    return NextResponse.json({message:'OK', user:mongoUser})
+    return NextResponse.json({message:'OK', user:deletedUser})
   }
   return new Response('', { status: 200 })
 }
